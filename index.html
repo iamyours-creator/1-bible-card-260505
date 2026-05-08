@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Bible Verse Card & Devotion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 내비게이션 메뉴 (애드센스 승인 필수 요소) -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:your-email@gmail.com">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 상단 애드센스 광고 자리 -->
+        <div class="ad-slot" id="ad-top">
+            <p>Advertisement</p>
+        </div>
+
+        <h1>Daily Bible Verse</h1>
+        <p class="subtitle">Choose a card to receive your daily blessing and devotion.</p>
+        
+        <div class="cards-wrapper" id="cards-wrapper">
+            <!-- 자바스크립트로 카드가 생성됩니다 -->
+        </div>
+
+        <button id="refresh-btn">Draw New Cards</button>
+
+        <!-- SEO 및 콘텐츠를 위한 묵상(해설) 텍스트 영역 -->
+        <article id="devotion-area" class="devotion-section hidden">
+            <h2>Today's Devotion</h2>
+            <h3 id="devotion-verse"></h3>
+            <p id="devotion-text">Select a card above to read the devotion.</p>
+        </article>
+
+        <!-- 하단 애드센스 광고 자리 -->
+        <div class="ad-slot" id="ad-bottom">
+            <p>Advertisement</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Daily Word & Blessing. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
