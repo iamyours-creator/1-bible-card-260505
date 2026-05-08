@@ -1,31 +1,22 @@
-// 애드센스 승인을 위해 text, ref 외에 'reflection(해설/묵상)' 텍스트를 반드시 추가해야 합니다.
+// 여기에 300개의 성경 구절을 추가할 수 있습니다. (우선 10개 샘플)
 const bibleVerses = [
-    { 
-        text: "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you.", 
-        ref: "Numbers 6:24-25",
-        reflection: "This profound blessing from the Book of Numbers reminds us that God's ultimate desire is to bless His people. When we feel overwhelmed by daily challenges, we can find peace in knowing that God is actively watching over us, offering His grace and making His presence known in our lives. Take a moment today to reflect on the specific ways God has kept you safe and shown you favor."
-    },
-    { 
-        text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.", 
-        ref: "Jeremiah 29:11",
-        reflection: "During times of uncertainty, it is easy to become anxious about what tomorrow holds. This verse serves as a powerful anchor for our souls. God is not a distant observer; He is the architect of your future. His plans are intentionally designed for your well-being, growth, and eternal hope. Trust that even in the waiting periods, He is orchestrating a beautiful outcome for your life."
-    },
-    { 
-        text: "I can do all this through him who gives me strength.", 
-        ref: "Philippians 4:13",
-        reflection: "True strength does not come from our own physical or mental capacity, which can easily be depleted. The Apostle Paul wrote these words while facing extreme difficulties, teaching us that the secret to enduring any situation is tapping into Christ's boundless power. Whenever you face an obstacle today, remind yourself that you are not relying on your own strength, but on the limitless power of God within you."
-    }
-    // 나머지 297개도 이와 같이 3줄 이상의 reflection 텍스트를 포함하여 추가하세요.
+    { text: "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you.", ref: "Numbers 6:24-25" },
+    { text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.", ref: "Jeremiah 29:11" },
+    { text: "I can do all this through him who gives me strength.", ref: "Philippians 4:13" },
+    { text: "Trust in the Lord with all your heart and lean not on your own understanding.", ref: "Proverbs 3:5" },
+    { text: "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness.", ref: "Galatians 5:22" },
+    { text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.", ref: "Romans 8:28" },
+    { text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.", ref: "Joshua 1:9" },
+    { text: "The Lord is my shepherd, I lack nothing.", ref: "Psalm 23:1" },
+    { text: "Cast all your anxiety on him because he cares for you.", ref: "1 Peter 5:7" },
+    { text: "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.", ref: "Romans 15:13" }
 ];
 
 const cardsWrapper = document.getElementById('cards-wrapper');
 const refreshBtn = document.getElementById('refresh-btn');
-const devotionArea = document.getElementById('devotion-area');
-const devotionVerse = document.getElementById('devotion-verse');
-const devotionText = document.getElementById('devotion-text');
-
 const totalCards = 5;
 
+// 배열 요소를 무작위로 섞는 함수
 function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
@@ -36,20 +27,31 @@ function shuffleArray(array) {
     return array;
 }
 
+// 카드를 생성하고 화면에 표시하는 함수
 function initCards() {
-    cardsWrapper.innerHTML = '';
-    devotionArea.classList.add('hidden'); // 새 카드를 뽑을 때 해설창 숨김
+    // 만약 HTML에 카드를 넣을 공간이 없으면 실행 중단 (에러 방지)
+    if (!cardsWrapper) return;
     
+    // 기존 카드 지우기
+    cardsWrapper.innerHTML = '';
+    
+    // 전체 구절 배열을 섞은 복사본 만들기
     const shuffledVerses = shuffleArray([...bibleVerses]);
     
+    // 5개의 카드 생성
     for (let i = 0; i < totalCards; i++) {
         const verse = shuffledVerses[i];
+        
+        // 카드 컨테이너 생성
         const cardContainer = document.createElement('div');
         cardContainer.classList.add('card-container');
         
+        // 카드 내부 구조 HTML
         cardContainer.innerHTML = `
             <div class="card-inner">
-                <div class="card-front"></div>
+                <div class="card-front">
+                    <!-- Front design handled by CSS -->
+                </div>
                 <div class="card-back">
                     <div class="verse-text">"${verse.text}"</div>
                     <div class="verse-ref">- ${verse.ref}</div>
@@ -57,30 +59,25 @@ function initCards() {
             </div>
         `;
         
-        // 카드 클릭 시 뒤집히고, 하단에 묵상 텍스트 표시
+        // 클릭 이벤트 추가 (뒤집기 기능만 단독으로 실행)
         cardContainer.addEventListener('click', function() {
-            // 다른 카드들이 이미 뒤집혀 있다면 원상복구 (선택사항, 원치 않으면 아래 3줄 삭제)
+            // 다른 카드가 뒤집혀 있으면 다시 덮는 기능 (선택사항)
             document.querySelectorAll('.card-container').forEach(card => {
                 if(card !== this) card.classList.remove('flipped');
             });
 
             this.classList.toggle('flipped');
-            
-            // 텍스트 영역 업데이트 및 표시
-            if(this.classList.contains('flipped')) {
-                devotionVerse.innerText = `"${verse.text}" - ${verse.ref}`;
-                devotionText.innerText = verse.reflection;
-                devotionArea.classList.remove('hidden');
-                // 부드럽게 스크롤 이동
-                devotionArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } else {
-                devotionArea.classList.add('hidden');
-            }
         });
         
+        // 화면에 추가
         cardsWrapper.appendChild(cardContainer);
     }
 }
 
-refreshBtn.addEventListener('click', initCards);
+// 새 카드 뽑기 버튼 이벤트
+if (refreshBtn) {
+    refreshBtn.addEventListener('click', initCards);
+}
+
+// 페이지 로드 시 초기 카드 세팅
 document.addEventListener('DOMContentLoaded', initCards);

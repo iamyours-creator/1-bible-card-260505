@@ -3,50 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Bible Verse Card & Devotion</title>
+    <title>Daily Word & Devotion | Inspirational Bible Verses</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Start your day with powerful Bible verses and deep daily devotions. Find hope, strength, and blessings for your life.">
+    google-site-verification: google1aadb986c15030ba.html
 </head>
 <body>
-    <!-- 내비게이션 메뉴 (애드센스 승인 필수 요소) -->
+    <!-- 명확한 네비게이션 (구글 가이드라인 준수) -->
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:your-email@gmail.com">Contact</a>
-        </nav>
+        <div class="header-content">
+            <div class="logo">Daily Word</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:your-email@gmail.com">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <div class="container">
-        <!-- 상단 애드센스 광고 자리 -->
-        <div class="ad-slot" id="ad-top">
-            <p>Advertisement</p>
-        </div>
+        <!-- 상단 광고 슬롯 -->
+        <div class="ad-slot" id="ad-top"><p>Advertisement</p></div>
 
-        <h1>Daily Bible Verse</h1>
-        <p class="subtitle">Choose a card to receive your daily blessing and devotion.</p>
-        
-        <div class="cards-wrapper" id="cards-wrapper">
-            <!-- 자바스크립트로 카드가 생성됩니다 -->
-        </div>
+        <!-- 1. 인터랙티브 유저 경험 영역 (기존 카드 기능) -->
+        <section class="hero-section">
+            <h1>Pick Your Daily Blessing</h1>
+            <p class="subtitle">Select a card below for a random daily verse, then scroll down to read today's deep reflections.</p>
+            
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- JS로 카드 생성됨 -->
+            </div>
+            <button id="refresh-btn">Draw New Cards</button>
+        </section>
 
-        <button id="refresh-btn">Draw New Cards</button>
+        <!-- 중간 광고 슬롯 -->
+        <div class="ad-slot" id="ad-mid"><p>Advertisement</p></div>
 
-        <!-- SEO 및 콘텐츠를 위한 묵상(해설) 텍스트 영역 -->
-        <article id="devotion-area" class="devotion-section hidden">
-            <h2>Today's Devotion</h2>
-            <h3 id="devotion-verse"></h3>
-            <p id="devotion-text">Select a card above to read the devotion.</p>
-        </article>
+        <!-- 2. SEO 및 애드센스 봇을 위한 텍스트 콘텐츠 영역 (매우 중요) -->
+        <!-- 이곳에 완성된 문장의 영어 텍스트가 하드코딩 되어 있어야 승인됩니다. -->
+        <section class="content-feed">
+            <h2>Latest Devotions & Reflections</h2>
+            
+            <article class="devotion-post">
+                <h3>God's Ultimate Plan for Your Future</h3>
+                <span class="verse-quote">"For I know the plans I have for you, declares the Lord..." - Jeremiah 29:11</span>
+                <p>During times of uncertainty, it is easy to become anxious about what tomorrow holds. This verse serves as a powerful anchor for our souls. God is not a distant observer; He is the architect of your future. His plans are intentionally designed for your well-being, growth, and eternal hope. When we face economic hardship, political instability, or personal crises, trusting in this divine blueprint provides a peace that transcends human understanding. Take a moment today to reflect on the specific ways God has guided you through past difficulties.</p>
+            </article>
 
-        <!-- 하단 애드센스 광고 자리 -->
-        <div class="ad-slot" id="ad-bottom">
-            <p>Advertisement</p>
-        </div>
+            <article class="devotion-post">
+                <h3>Finding Strength in the Midst of Weakness</h3>
+                <span class="verse-quote">"I can do all this through him who gives me strength." - Philippians 4:13</span>
+                <p>True strength does not come from our own physical or mental capacity, which can easily be depleted by the demands of modern life. The Apostle Paul wrote these words while facing extreme difficulties, teaching us that the secret to enduring any situation is tapping into Christ's boundless power. Whenever you face a monumental task or a seemingly impossible obstacle today, remind yourself that you are not relying on your own limited resources. The Creator of the universe offers His strength to those who simply ask and believe.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>God's Ultimate Plan for Your Future</h3>
+                <span class="verse-quote">"For I know the plans I have for you, declares the Lord..." - Jeremiah 29:11</span>
+                <p>During times of uncertainty, it is easy to become anxious about what tomorrow holds. This verse serves as a powerful anchor for our souls. God is not a distant observer; He is the architect of your future. His plans are intentionally designed for your well-being, growth, and eternal hope. When we face economic hardship, political instability, or personal crises, trusting in this divine blueprint provides a peace that transcends human understanding. Take a moment today to reflect on the specific ways God has guided you through past difficulties, knowing He will do the same for your future.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>Finding Strength in the Midst of Weakness</h3>
+                <span class="verse-quote">"I can do all this through him who gives me strength." - Philippians 4:13</span>
+                <p>True strength does not come from our own physical or mental capacity, which can easily be depleted by the demands of modern life. The Apostle Paul wrote these words while facing extreme difficulties, teaching us that the secret to enduring any situation is tapping into Christ's boundless power. Whenever you face a monumental task or a seemingly impossible obstacle today, remind yourself that you are not relying on your own limited resources. The Creator of the universe offers His strength to those who simply ask and believe. Step forward with confidence, knowing you are fully equipped by Him.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>The Comfort of the Good Shepherd</h3>
+                <span class="verse-quote">"The Lord is my shepherd, I lack nothing." - Psalm 23:1</span>
+                <p>In a world that constantly tells us we need more to be happy, this profound metaphor offers a radically different perspective. A good shepherd anticipates the needs of the flock, provides protection from hidden dangers, and leads them to places of rest and nourishment. When we truly recognize God as our Shepherd, the frantic pursuit of material wealth and social status begins to fade. We discover a deep sense of contentment, realizing that everything we genuinely need is already provided through His grace. Rest in the assurance that your Shepherd is watching over every detail of your life today.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>Trusting Beyond Our Understanding</h3>
+                <span class="verse-quote">"Trust in the Lord with all your heart and lean not on your own understanding." - Proverbs 3:5</span>
+                <p>Human logic and reasoning are valuable gifts, but they have their limits, especially when we face situations that simply do not make sense. This proverb challenges our natural desire to control and figure out every aspect of our journey. Total trust requires us to surrender our limited perspective and rely entirely on God's infinite wisdom. Even when the path ahead seems dark or confusing, we must remember that God sees the entire picture from beginning to end. By choosing to let go of our own assumptions and leaning into His promises, we open the door to divine guidance and profound peace.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>Conquering Fear with Divine Presence</h3>
+                <span class="verse-quote">"So do not fear, for I am with you; do not be dismayed, for I am your God." - Isaiah 41:10</span>
+                <p>Fear is a universal human emotion that can paralyze us and prevent us from fulfilling our true potential. However, God does not simply tell us to stop being afraid; He provides the ultimate antidote to our anxiety: His continuous presence. The promise here is not that we will never face terrifying circumstances, but rather that we will never have to face them alone. He actively strengthens us, helps us, and upholds us with His righteous right hand when we feel like giving up. Let this truth sink deeply into your heart today, replacing your worries with unshakable courage.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>The Promise of True Rest</h3>
+                <span class="verse-quote">"Come to me, all you who are weary and burdened, and I will give you rest." - Matthew 11:28</span>
+                <p>Modern society praises endless productivity and busyness, often leaving us feeling spiritually and physically drained. Jesus extends a gentle invitation to those who are exhausted by the heavy burdens of life, whether they are financial pressures, relational conflicts, or emotional pain. The rest He offers is not merely a temporary break from work, but a deep, restorative peace for the soul. To receive this rest, we must take the intentional step of coming to Him and laying down our heavy loads at His feet. Allow yourself to pause today and accept the profound spiritual rest that only He can provide.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>Cultivating the Fruit of the Spirit</h3>
+                <span class="verse-quote">"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness..." - Galatians 5:22</span>
+                <p>Spiritual growth is not about strictly following a set of religious rules, but rather about undergoing an internal transformation. Just as a healthy tree naturally produces good fruit over time, a life connected to God's Spirit naturally begins to exhibit these beautiful characteristics. These traits—love, joy, peace, and patience—are especially crucial when we interact with difficult people or navigate frustrating circumstances. We cannot manufacture this fruit through sheer willpower; it grows as we spend time in God's presence and surrender to His shaping hand. Ask the Spirit to cultivate these qualities within your character today.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>Exchanging Anxiety for Peace</h3>
+                <span class="verse-quote">"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." - Philippians 4:6</span>
+                <p>Anxiety often stems from our desperate attempts to control outcomes that are entirely out of our hands. The Apostle Paul offers a highly practical strategy for combating worry: turning our anxious thoughts directly into prayers. This process involves honestly presenting our needs to God, but doing so with a foundation of gratitude for what He has already done. When we shift our focus from our overwhelming problems to God's reliable provision, the heavy weight of anxiety naturally begins to lift. The result is a supernatural peace that guards our hearts and minds against the storms of life.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>God's Purpose in All Things</h3>
+                <span class="verse-quote">"And we know that in all things God works for the good of those who love him, who have been called according to his purpose." - Romans 8:28</span>
+                <p>It is often incredibly difficult to see any good in moments of deep sorrow, failure, or unexpected loss. However, this verse provides a sweeping promise that God is actively involved in every single detail of our lives, orchestrating events for a higher purpose. This does not mean that every event itself is inherently good, but rather that God can weave even our darkest moments into a beautiful and redemptive tapestry. Our role is to maintain our love for Him and trust His overarching narrative, even when the current chapter is painful. Hold onto the hope that nothing in your life is wasted in His hands.</p>
+            </article>
+
+            <article class="devotion-post">
+                <h3>Overflowing with Divine Hope</h3>
+                <span class="verse-quote">"May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit." - Romans 15:13</span>
+                <p>Hope is not simply wishful thinking; it is a confident expectation based on the undeniable character of God. The beautiful progression in this verse reveals that as we actively choose to trust God, He responds by filling us internally with profound joy and peace. This internal fulfillment is not meant to be kept to ourselves; it is designed to overflow, spilling out to encourage and uplift the people around us. Our world is desperate for authentic hope, and as believers, we are called to be vessels of that light. May your life today be a radiant reflection of the hope you have found in Him.</p>
+            </article>
+
+            <!-- 승인을 위해 이런 article을 최소 10개 이상 여기에 직접 작성해 넣으세요 -->
+        </section>
+
+        <!-- 하단 광고 슬롯 -->
+        <div class="ad-slot" id="ad-bottom"><p>Advertisement</p></div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Daily Word & Blessing. All rights reserved.</p>
+        <p>&copy; 2026 Daily Word Media. All rights reserved. Connecting faith with daily life.</p>
     </footer>
 
     <script src="script.js"></script>
